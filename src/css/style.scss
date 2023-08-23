@@ -1,0 +1,89 @@
+@use "sass:color";
+@import "themes.scss";
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+
+	color: var(--text-color);
+	background-color: var(--bg-color);
+
+   font-family: 'Gemunu Libre', sans-serif;
+   font-weight: 200;
+}
+
+a {
+	color: var(--text-color);
+	text-decoration: none;
+}
+.icon {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+label {
+   display: none;
+}
+input, textarea {
+   outline: none;
+   border: none;
+}
+
+.nav {
+	position: fixed;
+	display: flex;
+	width: 100%;
+	height: 60px;
+
+	justify-content: center;
+	align-items: center;
+	padding: 0 24px;
+
+	&-icon {
+		width: 32px;
+		height: 32px;
+		background-image: url("../assets/icons/github-mark.svg");
+	}
+	&-list {
+		list-style-type: none;
+
+		display: flex;
+		margin-left: auto;
+		padding: 0;
+		gap: 20px;
+	}
+	&-item {
+		font-size: 24px;
+      font-weight: 700;
+	}
+}
+
+header {
+	width: 100%;
+	height: 100vh;
+}
+
+section {
+	display: flex;
+}
+
+#contact {
+   flex-direction: column;
+   min-height: 400px;
+   justify-content: center;
+   align-items: center;
+}
+form {
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+
+   input {
+      width: 100%;
+   }
+}

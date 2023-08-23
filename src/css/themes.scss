@@ -1,0 +1,51 @@
+:root,
+:root.light {
+  --main-color: #fff;
+  --text-color: #000;
+  --accent-color: #54429f;
+  --secondary-accent: #ffe34f;
+  --bg-color: #d6d6d6;
+
+  .icon {
+    filter: invert(100);
+  }
+
+  #darkIcon {
+    display: none;
+  }
+  #lightIcon {
+    display: block;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-color: #181818;
+    --text-color: #fff;
+    --accent-color: #ffe34f;
+    --secondary-accent: #54429f;
+    --bg-color: #3d3d3d;
+
+    #darkIcon {
+      display: block;
+    }
+    #lightIcon {
+      display: none;
+    }
+  }
+}
+
+:root.dark {
+  --main-color: #181818;
+  --text-color: #fff;
+  --accent-color: #ffe34f;
+  --secondary-accent: #54429f;
+  --bg-color: #3d3d3d;
+
+  #darkIcon {
+    display: block;
+  }
+  #lightIcon {
+    display: none;
+  }
+}

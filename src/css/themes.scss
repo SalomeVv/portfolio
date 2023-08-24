@@ -2,8 +2,8 @@
 :root.light {
   --main-color: #fff;
   --text-color: #000;
-  --accent-color: #54429f;
-  --secondary-accent: #ffe34f;
+  --accent-color: #dd5e3e;
+  --secondary-accent: #4ffff9;
   --bg-color: #d6d6d6;
 
   .icon {
@@ -22,9 +22,9 @@
   :root {
     --main-color: #181818;
     --text-color: #fff;
-    --accent-color: #ffe34f;
-    --secondary-accent: #54429f;
-    --bg-color: #3d3d3d;
+    --accent-color: #2ba050;
+    --secondary-accent: #dd5e3e;
+    --bg-color: #000000;
 
     #darkIcon {
       display: block;
@@ -38,8 +38,8 @@
 :root.dark {
   --main-color: #181818;
   --text-color: #fff;
-  --accent-color: #ffe34f;
-  --secondary-accent: #54429f;
+  --accent-color: #2ba050;
+  --secondary-accent: #dd5e3e;
   --bg-color: #3d3d3d;
 
   #darkIcon {

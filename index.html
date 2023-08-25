@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Portfolio</title>
+		<title>Salomé</title>
 		<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 		<link rel="preconnect" href="https://fonts.bunny.net" />
-		<link href="https://fonts.bunny.net/css?family=gemunu-libre: 200, 300, 700" rel="stylesheet" />
+		<link href="https://fonts.bunny.net/css?family=gemunu-libre:200,300,700" rel="stylesheet" />
 		<link href="dist/main.css" rel="stylesheet" />
 	</head>
 	<body>
@@ -22,13 +22,36 @@
 				</li>
 			</ul>
 		</nav>
-		<header></header>
-		<section id="about"></section>
-		<section id="projects"></section>
+		<header>
+			<div class="wrapper">
+				<h1>SalomeVv</h1>
+				<p>Full Stack Web Developer (Pending)</p>
+			</div>
+		</header>
+		<section id="about">
+			<h2>About</h2>
+			<div class="wrapper">
+				<div id="aboutMe">
+					<div id="aboutPortrait"></div>
+				</div>
+				<div id="aboutSkills">
+					<div class="skill"></div>
+				</div>
+			</div>
+		</section>
+		<section id="projects">
+			<h2>Projects</h2>
+			<div class="wrapper">
+				<div class="project"></div>
+				<div class="project"></div>
+				<div class="project"></div>
+				<div class="project"></div>
+			</div>
+		</section>
 		<section id="contact">
 			<h2>Contact Me</h2>
 			<div class="wrapper">
-				<div class="contact-img"></div>
+				<div id="contactImg"></div>
 				<form id="contactForm">
 					<div>
 						<label for="name">Full name</label>
@@ -47,7 +70,7 @@
 					</div>
 					<div>
 						<label for="message">Message</label>
-						<textarea id="message" type="text" placeholder="Enter your message here..."></textarea>
+						<textarea id="message" placeholder="Enter your message here..."></textarea>
 						<div class="error-message"></div>
 					</div>
 					<button id="submitButton" type="submit">Send</button>

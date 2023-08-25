@@ -30,12 +30,16 @@ label {
 	display: none;
 }
 input,
-textarea, button {
+textarea,
+button {
 	outline: none;
 	border: none;
 	border-radius: 4px;
 
 	font-family: "Gemunu Libre", sans-serif;
+}
+.wrapper {
+	display: flex;
 }
 
 .nav {
@@ -69,7 +73,8 @@ textarea, button {
 
 		&:hover {
 			color: var(--secondary-accent);
-			filter: brightness(0) saturate(100%) invert(51%) sepia(68%) saturate(1693%) hue-rotate(331deg) brightness(87%) contrast(98%);
+			filter: brightness(0) saturate(100%) invert(51%) sepia(68%) saturate(1693%) hue-rotate(331deg) brightness(87%)
+				contrast(98%);
 		}
 	}
 }
@@ -82,70 +87,135 @@ header {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top;
+
+	.wrapper {
+		flex-direction: column;
+		width: fit-content;
+		margin: 65vh auto auto 6vw;
+		gap: 8px;
+
+		h1 {
+			font-size: 64px;
+		}
+		p {
+			font-size: 40px;
+		}
+	}
 }
 
 section {
 	display: flex;
-}
-
-#contact {
 	flex-direction: column;
 	min-height: 400px;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
+}
+h2 {
+	font-size: 32px;
+	margin: 8px 0 32px 0;
+}
+#about {
+	&Me {
+		flex: 1;
+	}
+	&Portrait {
+		width: max(16vw, 20vh, 60px);
+		height: max(16vw, 20vh, 60px);
 
-	h2 {
-		font-size : 32px;
+		background-image: url(../assets/images/warm-praying-mantis_edit_b.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&Skills {
+		flex: 1;
+		display: flex;
 	}
 }
-.wrapper{
-	display: flex;
-	width: 500px;
-}
-.contact-img {
-	width: 100%;
-	flex: 1;
+#projects {
+	.wrapper {
+		margin: 0 24px;
+		flex-wrap: wrap;
 
-	background-image: url(../assets/images/green-praying-mantis-flower_edit_b.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-form {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-	margin-top: 20px;
-
-	input, textarea {
-		width: 100%;
-
-		font-weight: 200;
-		font-size: 20px;
-		color:var(--text-color);
-
-		background-image: url("../assets/images/semi-bright_stars_crop_edit_b.jpg");
+		justify-content: center;
+		gap: 4px;
+	}
+	.project {
+		width: 40vw;
+		height: 16vw;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
 
-		&::placeholder {
-			color: var(--text-color);
-			opacity : 0.5;
+		&:first-of-type {
+			background-image: url(../assets/images/m51_edit_b.jpg);
+		}
+		&:nth-of-type(2) {
+			background-image: url(../assets/images/440676main_STScI-2007-04a-full_full_edit_b.jpg);
+		}
+		&:nth-of-type(3) {
+			background-image: url(../assets/images/440676main_STScI-2007-04a-full_full_edit_b.jpg);
+		}
+		&:nth-of-type(4) {
+			background-image: url(../assets/images//m51_edit_b.jpg);
 		}
 	}
-	#submitButton {
-		margin-top: 16px;
-		background-color: var(--accent-color);
-		color: var(--bg-color);
+}
+#contact {
+	.wrapper {
+		width: 50vw;
+	}
+	&Img {
+		width: 100%;
+		flex: 1;
 
-		font-weight: 200;
-		font-size: 20px;
+		background-image: url(../assets/images/green-praying-mantis-flower_edit_b.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: bottom;
+	}
+	&Form {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		margin-bottom: 28px;
 
-		&:hover{
-			background-color: var(--secondary-accent);
-			opacity: 0.8;
+		input,
+		textarea {
+			width: 100%;
+			padding: 8px;
+
+			font-weight: 200;
+			font-size: 20px;
+			color: var(--text-color);
+
+			background-image: url("../assets/images/semi-bright_stars_crop_edit_b.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			&::placeholder {
+				color: var(--text-color);
+				opacity: 0.5;
+			}
+		}
+		textarea {
+			height: 200px;
+			resize: none;
+		}
+		#submitButton {
+			margin-top: 16px;
+			background-color: var(--accent-color);
+			color: var(--bg-color);
+
+			font-weight: 200;
+			font-size: 20px;
+
+			&:hover {
+				background-color: var(--secondary-accent);
+				opacity: 0.8;
+			}
 		}
 	}
 }

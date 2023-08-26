@@ -112,7 +112,7 @@ section {
 }
 h2 {
 	font-size: 32px;
-	margin: 8px 0 32px 0;
+	margin: 32px 0;
 }
 #about {
 	&Me {
@@ -134,15 +134,15 @@ h2 {
 }
 #projects {
 	.wrapper {
-		margin: 0 24px;
+		// margin: 0 1vw;
 		flex-wrap: wrap;
 
 		justify-content: center;
-		gap: 4px;
+		gap: 1vw;
 	}
 	.project {
-		width: 40vw;
-		height: 16vw;
+		width: 32vw;
+		height: 12vw;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -154,16 +154,16 @@ h2 {
 			background-image: url(../assets/images/440676main_STScI-2007-04a-full_full_edit_b.jpg);
 		}
 		&:nth-of-type(3) {
-			background-image: url(../assets/images/440676main_STScI-2007-04a-full_full_edit_b.jpg);
+			background-image: url(../assets/images/pexels-robert-gruszecki-9956995_edit_b.jpg);
 		}
 		&:nth-of-type(4) {
-			background-image: url(../assets/images//m51_edit_b.jpg);
+			background-image: url(../assets/images/pexels-jeremy-muller-6444367-edit_b.jpg);
 		}
 	}
 }
 #contact {
 	.wrapper {
-		width: 50vw;
+		width: min(60vw, 950px);
 	}
 	&Img {
 		width: 100%;
@@ -215,6 +215,59 @@ h2 {
 			&:hover {
 				background-color: var(--secondary-accent);
 				opacity: 0.8;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	#projects {
+		.project {
+			width: 48.5vw;
+			height: 19.4vw;
+		}
+	}
+	#contact {
+		.wrapper {
+			width: max(70vw, 600px);
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	#contact {
+		.wrapper {
+			width: min(80vw, 450px);
+			flex-direction: column;
+		}
+		&Img {
+			width: 80vw;
+			min-height: 80px;
+			background-position: left;
+
+			position: absolute;
+			margin-top: -80px;
+			margin-left: 4vw;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	h2 {
+		margin: 24px 0;
+	}
+	#projects {
+		.project {
+			width: 98vw;
+			height: 39.2vw;
+		}
+	}
+	#contact {
+		&Form {
+			input,
+			textarea {
+				padding: 6px;
+				font-size: 18px;
 			}
 		}
 	}

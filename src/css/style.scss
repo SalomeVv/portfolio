@@ -72,9 +72,7 @@ button {
 		opacity: 0.9;
 
 		&:hover {
-			color: var(--secondary-accent);
-			filter: brightness(0) saturate(100%) invert(51%) sepia(68%) saturate(1693%) hue-rotate(331deg) brightness(87%)
-				contrast(98%);
+			filter: invert(51%) sepia(85%) saturate(4541%) hue-rotate(345deg) brightness(104%) contrast(96%);
 		}
 	}
 }
@@ -114,6 +112,11 @@ h2 {
 	font-size: 32px;
 	margin: 32px 0;
 }
+h3 {
+	font-size: 24px;
+	font-weight: 300;
+	margin: 0  0 12px 0;
+}
 #about {
 	&Me {
 		flex: 1;
@@ -130,11 +133,40 @@ h2 {
 	&Skills {
 		flex: 1;
 		display: flex;
+		flex-direction: column;
+	}
+	.skill-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	.skill {
+		width: 35vw;
+		height: 32px;
+		display: flex;
+		align-items: center;
+		
+		border: solid 1px var(--text-color);
+		border-radius: 8px;
+
+		&-label {
+			width: 34vw;
+			text-align: right;
+
+			position:absolute;
+		}
+
+		&-level {
+			height: 30px;
+
+			background-image: linear-gradient(0.25turn, var(--accent-color), var(--secondary-accent));
+			border-radius: 8px 0 0 8px;
+			opacity: 0.8;
+		}
 	}
 }
 #projects {
 	.wrapper {
-		// margin: 0 1vw;
 		flex-wrap: wrap;
 
 		justify-content: center;
@@ -186,7 +218,7 @@ h2 {
 			width: 100%;
 			padding: 8px;
 
-			font-weight: 200;
+			font-weight: 300;
 			font-size: 20px;
 			color: var(--text-color);
 
@@ -196,8 +228,7 @@ h2 {
 			background-position: center;
 
 			&::placeholder {
-				color: var(--text-color);
-				opacity: 0.5;
+				color: var(--bg-color);
 			}
 		}
 		textarea {
@@ -209,12 +240,11 @@ h2 {
 			background-color: var(--accent-color);
 			color: var(--bg-color);
 
-			font-weight: 200;
+			font-weight: 700;
 			font-size: 20px;
 
 			&:hover {
 				background-color: var(--secondary-accent);
-				opacity: 0.8;
 			}
 		}
 	}

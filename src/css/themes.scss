@@ -6,10 +6,6 @@
   --secondary-accent: #4ffff9;
   --bg-color: #d6d6d6;
 
-  .icon {
-    filter: invert(100);
-  }
-
   #darkIcon {
     display: none;
   }
@@ -22,9 +18,13 @@
   :root {
     --main-color: #181818;
     --text-color: #fff;
-    --accent-color: #2ba050;
-    --secondary-accent: #dd5e3e;
+    --accent-color: #00c53e;
+    --secondary-accent: #fa552c;
     --bg-color: #000000;
+
+    .icon {
+      filter: invert(100);
+    }
 
     #darkIcon {
       display: block;
@@ -38,10 +38,14 @@
 :root.dark {
   --main-color: #181818;
   --text-color: #fff;
-  --accent-color: #2ba050;
+  --accent-color: #14a742;
   --secondary-accent: #dd5e3e;
   --bg-color: #3d3d3d;
 
+  .icon {
+    filter: invert(100);
+  }
+  
   #darkIcon {
     display: block;
   }

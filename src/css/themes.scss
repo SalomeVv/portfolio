@@ -1,66 +1,81 @@
 :root.light {
-  --main-color: #fff;
-  --text-color: #000;
-  --accent-color: #fa552c;
-  --accent-color-darker: #bb3716;
-  --accent-color-desat:#913e29;
-  --secondary-accent: #00c53e;
-  --secondary-accent-darker: #116e2f;
-  --secondary-accent-desat: #31503b;
-  --bg-color: #ffefef;
+	--main-color: #fff;
+	--text-color: #000;
+	// --accent-color: #fa552c;
+	// --accent-color-darker: #bb3716;
+	// --accent-color-desat: #913e29;
+	// --secondary-accent: #00c53e;
+	// --secondary-accent-darker: #116e2f;
+	// --secondary-accent-desat: #31503b;
+  --accent-color: #0048c5;
+	--accent-color-darker: #2b116e;
+	--accent-color-desat: #3d3150;
+	--secondary-accent: #fa2c9a;
+	--secondary-accent-darker: #bb1684;
+	--secondary-accent-desat: #912972;
+	--bg-color: #ffefef;
 
-  #darkIcon {
-    display: none;
-  }
-  #lightIcon {
-    display: block;
-  }
+	// .icon {
+	// 	filter: invert(0);
+	// }
+
+	.themeFilter {
+		filter: hue-rotate(220deg) brightness(1.5) grayscale(30%);
+	}
+
+	#darkIcon {
+		display: none;
+	}
+	#lightIcon {
+		display: block;
+	}
 }
 
-:root, :root.dark {
-  --main-color: #181818;
-  --text-color: #fff;
-  --accent-color: #00c53e;
-  --accent-color-darker: #116e2f;
-  --accent-color-desat: #31503b;
-  --secondary-accent: #fa552c;
-  --secondary-accent-darker: #bb3716;
-  --secondary-accent-desat:#913e29;
-  --bg-color: #000;
+:root,
+:root.dark {
+	--main-color: #181818;
+	--text-color: #fff;
+	--accent-color: #00c53e;
+	--accent-color-darker: #116e2f;
+	--accent-color-desat: #31503b;
+	--secondary-accent: #fa552c;
+	--secondary-accent-darker: #bb3716;
+	--secondary-accent-desat: #913e29;
+	--bg-color: #101010;
 
-  .icon {
-    filter: invert(100);
-  }
+	// .icon {
+	// 	filter: invert(100);
+	// }
 
-  #darkIcon {
-    display: block;
-  }
-  #lightIcon {
-    display: none;
-  }
+	#darkIcon {
+		display: block;
+	}
+	#lightIcon {
+		display: none;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --main-color: #181818;
-    --text-color: #fff;
-    --accent-color: #00c53e;
-    --accent-color-darker: #116e2f;
-    --accent-color-desat: #31503b;
-    --secondary-accent: #fa552c;
-    --secondary-accent-darker: #bb3716;
-    --secondary-accent-desat:#913e29;
-    --bg-color: #000000;
+	:root {
+		--main-color: #181818;
+		--text-color: #fff;
+		--accent-color: #00c53e;
+		--accent-color-darker: #116e2f;
+		--accent-color-desat: #31503b;
+		--secondary-accent: #fa552c;
+		--secondary-accent-darker: #bb3716;
+		--secondary-accent-desat: #913e29;
+		--bg-color: #101010;
 
-    .icon {
-      filter: invert(100);
-    }
+		// .icon {
+		// 	filter: invert(100);
+		// }
 
-    #darkIcon {
-      display: block;
-    }
-    #lightIcon {
-      display: none;
-    }
-  }
+		#darkIcon {
+			display: block;
+		}
+		#lightIcon {
+			display: none;
+		}
+	}
 }

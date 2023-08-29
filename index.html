@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Salomé</title>
 		<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-		<link rel="preconnect" href="https://fonts.bunny.net" />
-		<link href="https://fonts.bunny.net/css?family=gemunu-libre:200,300,700" rel="stylesheet" />
-		<script defer src="dist/main.js"></script>
 		<link href="dist/main.css" rel="stylesheet" />
+		<script defer src="dist/main.js"></script>
 	</head>
 	<body>
 		<nav class="nav">
-			<a class="nav-link" href="https://github.com/SalomeVv"><div class="nav-icon icon"></div></a>
+			<a class="nav-link" href="https://github.com/SalomeVv"
+				><img src="src/assets/icons/github-mark.svg" alt="github logo" class="icon" width="40px" height="40px"
+			/></a>
 			<ul class="nav-list">
 				<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
 				<li class="nav-item">
@@ -23,7 +23,7 @@
 				</li>
 			</ul>
 		</nav>
-		<header>
+		<header class="themeFilter">
 			<div class="wrapper">
 				<h1>SalomeVv</h1>
 				<p>Full Stack Web Developer (Pending)</p>
@@ -33,7 +33,7 @@
 			<h2>About</h2>
 			<div class="wrapper">
 				<div id="aboutMe">
-					<div id="aboutPortrait"></div>
+					<div id="aboutPortrait" class="themeFilter"></div>
 				</div>
 				<div id="aboutSkills">
 					<h3>Skills</h3>
@@ -43,35 +43,35 @@
 		<section id="projects">
 			<h2>Projects</h2>
 			<div class="wrapper">
-				<div class="project"></div>
-				<div class="project"></div>
-				<div class="project"></div>
-				<div class="project"></div>
+				<div class="project themeFilter"></div>
+				<div class="project themeFilter"></div>
+				<div class="project themeFilter"></div>
+				<div class="project themeFilter"></div>
 			</div>
 		</section>
 		<section id="contact">
 			<h2>Contact Me</h2>
 			<div class="wrapper">
-				<div id="contactImg"></div>
+				<div id="contactImg" class="themeFilter"></div>
 				<form id="contactForm" novalidate>
 					<div>
 						<label for="name">Full name</label>
-						<input id="name" type="text" placeholder="Enter your name..." required/>
+						<input id="name" class="themeFilter" type="text" placeholder="Enter your name..." required />
 						<div class="error-message"></div>
 					</div>
 					<div>
 						<label for="email">Email address</label>
-						<input id="email" type="email" placeholder="name@example.com" required/>
+						<input id="email" class="themeFilter" type="email" placeholder="name@example.com" required />
 						<div class="error-message"></div>
 					</div>
 					<div>
 						<label for="phone">Phone number</label>
-						<input id="phone" type="tel" placeholder="tel [optional]" />
+						<input id="phone" class="themeFilter" type="tel" placeholder="tel [optional]" />
 						<div class="error-message"></div>
 					</div>
 					<div>
 						<label for="message">Message</label>
-						<textarea id="message" placeholder="Enter your message here..." required></textarea>
+						<textarea id="message" class="themeFilter" placeholder="Enter your message here..." required></textarea>
 						<div class="error-message"></div>
 					</div>
 					<button id="submitButton" type="submit">Send</button>

@@ -1,10 +1,13 @@
-:root,
 :root.light {
   --main-color: #fff;
   --text-color: #000;
-  --accent-color: #dd5e3e;
-  --secondary-accent: #4ffff9;
-  --bg-color: #d6d6d6;
+  --accent-color: #fa552c;
+  --accent-color-darker: #bb3716;
+  --accent-color-desat:#913e29;
+  --secondary-accent: #00c53e;
+  --secondary-accent-darker: #116e2f;
+  --secondary-accent-desat: #31503b;
+  --bg-color: #ffefef;
 
   #darkIcon {
     display: none;
@@ -14,12 +17,39 @@
   }
 }
 
+:root, :root.dark {
+  --main-color: #181818;
+  --text-color: #fff;
+  --accent-color: #00c53e;
+  --accent-color-darker: #116e2f;
+  --accent-color-desat: #31503b;
+  --secondary-accent: #fa552c;
+  --secondary-accent-darker: #bb3716;
+  --secondary-accent-desat:#913e29;
+  --bg-color: #000;
+
+  .icon {
+    filter: invert(100);
+  }
+
+  #darkIcon {
+    display: block;
+  }
+  #lightIcon {
+    display: none;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --main-color: #181818;
     --text-color: #fff;
     --accent-color: #00c53e;
+    --accent-color-darker: #116e2f;
+    --accent-color-desat: #31503b;
     --secondary-accent: #fa552c;
+    --secondary-accent-darker: #bb3716;
+    --secondary-accent-desat:#913e29;
     --bg-color: #000000;
 
     .icon {
@@ -32,24 +62,5 @@
     #lightIcon {
       display: none;
     }
-  }
-}
-
-:root.dark {
-  --main-color: #181818;
-  --text-color: #fff;
-  --accent-color: #14a742;
-  --secondary-accent: #dd5e3e;
-  --bg-color: #3d3d3d;
-
-  .icon {
-    filter: invert(100);
-  }
-  
-  #darkIcon {
-    display: block;
-  }
-  #lightIcon {
-    display: none;
   }
 }

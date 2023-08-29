@@ -53,25 +53,25 @@
 			<h2>Contact Me</h2>
 			<div class="wrapper">
 				<div id="contactImg"></div>
-				<form id="contactForm">
+				<form id="contactForm" novalidate>
 					<div>
 						<label for="name">Full name</label>
-						<input id="name" type="text" placeholder="Enter your name..." />
+						<input id="name" type="text" placeholder="Enter your name..." required/>
 						<div class="error-message"></div>
 					</div>
 					<div>
 						<label for="email">Email address</label>
-						<input id="email" type="email" placeholder="name@example.com" />
+						<input id="email" type="email" placeholder="name@example.com" required/>
 						<div class="error-message"></div>
 					</div>
 					<div>
 						<label for="phone">Phone number</label>
-						<input id="phone" type="tel" placeholder="(123) 456-7890" />
+						<input id="phone" type="tel" placeholder="tel [optional]" />
 						<div class="error-message"></div>
 					</div>
 					<div>
 						<label for="message">Message</label>
-						<textarea id="message" placeholder="Enter your message here..."></textarea>
+						<textarea id="message" placeholder="Enter your message here..." required></textarea>
 						<div class="error-message"></div>
 					</div>
 					<button id="submitButton" type="submit">Send</button>

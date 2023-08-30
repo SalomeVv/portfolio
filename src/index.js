@@ -99,6 +99,7 @@ class Form {
     let errors = document.querySelectorAll(".error");
     if (errors.length == 0) {
       let submitted = this.submitForm();
+      console.log("submitted ", submitted);
       if (submitted) {
         this.dom.replaceChildren();
         makeEl("div", this.dom, [

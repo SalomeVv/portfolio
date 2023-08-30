@@ -26,11 +26,11 @@ a {
   color: var(--text-color);
   text-decoration: none;
 }
-.icon {
-	fill:none;
-	filter: drop-shadow(0px 0.6px 0px var(--text-color)) drop-shadow(0px -0.6px 0px var(--text-color)) drop-shadow(0.6px 0px 0px var(--text-color))
-		drop-shadow(-0.6px 0px 0px var(--text-color));
-}
+// .icon {
+// 	fill:none;
+// 	filter: drop-shadow(0px 0.6px 0px var(--text-color)) drop-shadow(0px -0.6px 0px var(--text-color)) drop-shadow(0.6px 0px 0px var(--text-color))
+// 		drop-shadow(-0.6px 0px 0px var(--text-color));
+// }
 label {
   display: none;
 }

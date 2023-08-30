@@ -74,10 +74,35 @@ class Form {
       input.nextElementSibling.textContent = "";
     }
   }
+  async submitForm() {
+    let formContent = {};
+    this.inputs.forEach((input) => {
+      formContent[`${input.id}`] = input.value;
+    });
+    // console.log(formContent);
+    fetch("src/message.php", {
+      method: "POST",
+      body: JSON.stringify(formContent),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  }
   checkForm() {
     this.inputs.forEach((input) => {
       this.checkInputValidity(input);
     });
+    let errors = document.querySelectorAll(".error");
+    if (errors.length == 0) {
+      this.submitForm();
+      this.dom.replaceChildren();
+      makeEl("div", this.dom, [
+        ["id", "contactFormSent"],
+        ["textContent", "Message sent"],
+      ]);
+    }
   }
   initListeners() {
     this.inputs.forEach((input) => {
@@ -89,8 +114,6 @@ class Form {
     this.dom.addEventListener("submit", (event) => {
       event.preventDefault();
       this.checkForm();
-      this.dom.replaceChildren();
-      makeEl("div", this.dom, [["id","contactFormSent"], ["textContent", "Message sent"]]);
     });
   }
 }

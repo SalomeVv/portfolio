@@ -15,9 +15,9 @@
 	--secondary-accent-desat: #912972;
 	--bg-color: #ffefef;
 
-	// .icon {
-	// 	filter: invert(0);
-	// }
+	.icon {
+		filter: invert(0);
+	}
 
 	.themeFilter {
 		filter: hue-rotate(220deg) brightness(1.5) grayscale(30%);
@@ -43,9 +43,9 @@
 	--secondary-accent-desat: #913e29;
 	--bg-color: #101010;
 
-	// .icon {
-	// 	filter: invert(100);
-	// }
+	.icon {
+		filter: invert(100);
+	}
 
 	#darkIcon {
 		display: block;
@@ -67,9 +67,9 @@
 		--secondary-accent-desat: #913e29;
 		--bg-color: #101010;
 
-		// .icon {
-		// 	filter: invert(100);
-		// }
+		.icon {
+			filter: invert(100);
+		}
 
 		#darkIcon {
 			display: block;

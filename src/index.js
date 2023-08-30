@@ -79,8 +79,7 @@ class Form {
     this.inputs.forEach((input) => {
       formContent[`${input.id}`] = input.value;
     });
-    // console.log(formContent);
-    fetch("src/message.php", {
+    fetch("message.php", {
       method: "POST",
       body: JSON.stringify(formContent),
       headers: {
@@ -88,7 +87,10 @@ class Form {
       },
     })
       .then((response) => response.json())
-      .then((json) => console.log(json));
+      .then((json) => {
+        console.log(json);
+        return json.messageSent;
+      });
   }
   checkForm() {
     this.inputs.forEach((input) => {
@@ -96,12 +98,14 @@ class Form {
     });
     let errors = document.querySelectorAll(".error");
     if (errors.length == 0) {
-      this.submitForm();
-      this.dom.replaceChildren();
-      makeEl("div", this.dom, [
-        ["id", "contactFormSent"],
-        ["textContent", "Message sent"],
-      ]);
+      let submitted = this.submitForm();
+      if (submitted) {
+        this.dom.replaceChildren();
+        makeEl("div", this.dom, [
+          ["id", "contactFormSent"],
+          ["textContent", "Message sent"],
+        ]);
+      }
     }
   }
   initListeners() {

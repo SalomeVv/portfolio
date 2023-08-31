@@ -50,6 +50,41 @@ class Skills {
   }
 }
 
+class Projects {
+  constructor(projects, parent) {
+    this.projects = projects;
+    this.parent = parent;
+    this.display(this.parent);
+  }
+
+  display(parent) {
+    // const section = makeEl("section", parent, [["id", "projects"]]);
+    // makeEl("h2", section, [["textContent", "Projects"]]);
+    // const wrapper = makeEl("div", section, [["classList", "wrapper"]]);
+    const wrapper = makeEl("div", parent, [["classList", "wrapper"]]);
+    this.projects.forEach((project) => {
+      const projectBlock = makeEl("div", wrapper, [["classList", "project"]]);
+      const projectImg = makeEl("img", projectBlock, [
+        ["classList", "project-img"],
+        ["src", project.img[0]],
+        ["alt", `${project.name} Screenshot`],
+      ]);
+      const title = makeEl("h4", projectBlock, [["textContent", project.name]]);
+      title.style.backgroundImage = `url(${project.img[0]})`;
+      const projectMore = makeEl("div", projectBlock, [
+        ["classList", "project-more"],
+      ]);
+      makeEl("p", projectMore, [["textContent", project.desc]]);
+      const link = makeEl("div", projectMore, [["classList", "project-link"]]);
+      makeEl("a", link, [["href", project.link]]);
+      const github = makeEl("div", projectMore, [
+        ["classList", "project-github"],
+      ]);
+      makeEl("a", github, [["href", project.github]]);
+    });
+  }
+}
+
 class Form {
   constructor(id) {
     this.dom = document.getElementById(id);
@@ -92,21 +127,21 @@ class Form {
         return json.messageSent;
       });
   }
-  checkForm() {
+  async checkForm() {
     this.inputs.forEach((input) => {
       this.checkInputValidity(input);
     });
     let errors = document.querySelectorAll(".error");
     if (errors.length == 0) {
-      let submitted = this.submitForm();
+      let submitted = await this.submitForm();
       console.log("submitted ", submitted);
-      if (submitted) {
-        this.dom.replaceChildren();
-        makeEl("div", this.dom, [
-          ["id", "contactFormSent"],
-          ["textContent", "Message sent"],
-        ]);
-      }
+      // if (submitted) {
+      this.dom.replaceChildren();
+      makeEl("div", this.dom, [
+        ["id", "contactFormSent"],
+        ["textContent", "Message sent"],
+      ]);
+      // }
     }
   }
   initListeners() {
@@ -130,6 +165,33 @@ let skills = [
   { name: "js", level: 70 },
   { name: "php", level: 70 },
 ];
+let projects = [
+  {
+    name: "Age Calculator",
+    img: ["src/assets/images/project_age_calculator_screen.png"],
+    desc: "",
+    github: "",
+    link: "",
+  },
+  {
+    name: "Dictionary",
+    img: [
+      "src/assets/images/project_dictionary_light_screen.png",
+      "src/assets/images/project_dictionary_dark_screen.png",
+    ],
+    desc: "",
+    github: "",
+    link: "",
+  },
+  {
+    name: "Weather App",
+    img: ["src/assets/images/project_weather_app_home_screen.png"],
+    desc: "",
+    github: "",
+    link: "",
+  },
+];
 
 new Skills(skills, document.getElementById("aboutSkills"));
+new Projects(projects, document.getElementById("projects"));
 const form = new Form("contactForm");

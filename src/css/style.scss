@@ -218,7 +218,7 @@ h3 {
     // 	background-image: url(../assets/images/pexels-jeremy-muller-6444367-edit_b_noBG_100.png);
     // }
     h4 {
-      width:inherit;
+      width: inherit;
       height: inherit;
       position: absolute;
       font-size: 64px;
@@ -347,6 +347,16 @@ h3 {
   }
 }
 
+@media screen and (max-width: 800px) {
+  #projects {
+    .project {
+      h4 {
+        font-size: 48px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 700px) {
   #contact {
     .wrapper {
@@ -370,7 +380,7 @@ h3 {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 560px) {
   h2 {
     margin: 24px 0;
   }

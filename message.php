@@ -4,7 +4,11 @@ header("Content-Type: application/json", true);
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
+require 'vendor/autoload.php';
 require 'vendor/autoload.php';
 
 $formContent = json_decode(file_get_contents('php://input'), true);

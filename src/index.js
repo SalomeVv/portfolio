@@ -55,6 +55,7 @@ class Projects {
     this.projects = projects;
     this.parent = parent;
     this.display(this.parent);
+    this.initListeners();
   }
 
   display(parent) {
@@ -62,25 +63,38 @@ class Projects {
     // makeEl("h2", section, [["textContent", "Projects"]]);
     // const wrapper = makeEl("div", section, [["classList", "wrapper"]]);
     const wrapper = makeEl("div", parent, [["classList", "wrapper"]]);
-    this.projects.forEach((project) => {
+    this.projects.forEach((project, i) => {
+      const bg = ["src/assets/images/m51_edit_b_noBG_100.png", "src/assets/images/440676main_STScI-2007-04a-full_full_edit_b_noBG_100.png", "src/assets/images/pexels-robert-gruszecki-9956995_edit_b_noBG_100.png", "src/assets/images/pexels-jeremy-muller-6444367-edit_b_noBG_100.png"];
       const projectBlock = makeEl("div", wrapper, [["classList", "project"]]);
-      const projectImg = makeEl("img", projectBlock, [
+      makeEl("img", projectBlock, [
         ["classList", "project-img"],
         ["src", project.img[0]],
         ["alt", `${project.name} Screenshot`],
       ]);
       const title = makeEl("h4", projectBlock, [["textContent", project.name]]);
-      title.style.backgroundImage = `url(${project.img[0]})`;
+      const button = makeEl("button", projectBlock, [["classList", "more-button"], ["textContent", "<"]]);
+      title.style.backgroundImage = button.style.backgroundImage = `url(${project.img[0]})`;
       const projectMore = makeEl("div", projectBlock, [
         ["classList", "project-more"],
       ]);
       makeEl("p", projectMore, [["textContent", project.desc]]);
-      const link = makeEl("div", projectMore, [["classList", "project-link"]]);
-      makeEl("a", link, [["href", project.link]]);
-      const github = makeEl("div", projectMore, [
-        ["classList", "project-github"],
-      ]);
-      makeEl("a", github, [["href", project.github]]);
+      makeEl("a", projectMore, [["classList", "project-link icon"], ["href", project.link]]);
+      makeEl("a", projectMore, [["classList", "project-github icon"], ["href", project.github]]);
+      let bg_i = i % bg.length;
+      projectBlock.style.backgroundImage = `url(${bg[bg_i]})`;
+    });
+  }
+  initListeners() {
+    const projectsDom = document.querySelectorAll(".project");
+    projectsDom.forEach(project => {
+      const moreButton = project.querySelector('.more-button');
+      moreButton.addEventListener("click", () => {
+        if (!(project.className).includes("more")) {
+          project.classList.add("more");
+        } else {
+          project.classList.remove("more");
+        }
+      });
     });
   }
 }

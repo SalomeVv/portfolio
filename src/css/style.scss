@@ -502,6 +502,7 @@ h3 {
     }
     &Me {
       flex: auto;
+      flex-direction: column;
       p {
         width: 50vw;
       }

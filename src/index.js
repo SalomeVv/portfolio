@@ -64,7 +64,12 @@ class Projects {
     // const wrapper = makeEl("div", section, [["classList", "wrapper"]]);
     const wrapper = makeEl("div", parent, [["classList", "wrapper"]]);
     this.projects.forEach((project, i) => {
-      const bg = ["src/assets/images/m51_edit_b_noBG_100.png", "src/assets/images/440676main_STScI-2007-04a-full_full_edit_b_noBG_100.png", "src/assets/images/pexels-robert-gruszecki-9956995_edit_b_noBG_100.png", "src/assets/images/pexels-jeremy-muller-6444367-edit_b_noBG_100.png"];
+      const bg = [
+        "src/assets/images/m51_edit_b_noBG_100.png",
+        "src/assets/images/440676main_STScI-2007-04a-full_full_edit_b_noBG_100.png",
+        "src/assets/images/pexels-robert-gruszecki-9956995_edit_b_noBG_100.png",
+        "src/assets/images/pexels-jeremy-muller-6444367-edit_b_noBG_100.png",
+      ];
       const projectBlock = makeEl("div", wrapper, [["classList", "project"]]);
       makeEl("img", projectBlock, [
         ["classList", "project-img"],
@@ -72,27 +77,39 @@ class Projects {
         ["alt", `${project.name} Screenshot`],
       ]);
       const title = makeEl("h4", projectBlock, [["textContent", project.name]]);
-      const button = makeEl("button", projectBlock, [["classList", "more-button"], ["textContent", "<"]]);
-      title.style.backgroundImage = button.style.backgroundImage = `url(${project.img[0]})`;
+      const button = makeEl("button", projectBlock, [
+        ["classList", "more-button"],
+        ["textContent", "<"],
+      ]);
+      title.style.backgroundImage =
+        button.style.backgroundImage = `url(${project.img[0]})`;
       const projectMore = makeEl("div", projectBlock, [
         ["classList", "project-more"],
       ]);
       makeEl("p", projectMore, [["textContent", project.desc]]);
-      makeEl("a", projectMore, [["classList", "project-link icon"], ["href", project.link]]);
-      makeEl("a", projectMore, [["classList", "project-github icon"], ["href", project.github]]);
+      makeEl("a", projectMore, [
+        ["classList", "project-link icon"],
+        ["href", project.link],
+      ]);
+      makeEl("a", projectMore, [
+        ["classList", "project-github icon"],
+        ["href", project.github],
+      ]);
       let bg_i = i % bg.length;
       projectBlock.style.backgroundImage = `url(${bg[bg_i]})`;
     });
   }
   initListeners() {
     const projectsDom = document.querySelectorAll(".project");
-    projectsDom.forEach(project => {
-      const moreButton = project.querySelector('.more-button');
+    projectsDom.forEach((project) => {
+      const moreButton = project.querySelector(".more-button");
       moreButton.addEventListener("click", () => {
-        if (!(project.className).includes("more")) {
+        if (!project.className.includes("more")) {
           project.classList.add("more");
+          moreButton.textContent = ">";
         } else {
           project.classList.remove("more");
+          moreButton.textContent = "<";
         }
       });
     });
@@ -208,4 +225,12 @@ let projects = [
 
 new Skills(skills, document.getElementById("aboutSkills"));
 new Projects(projects, document.getElementById("projects"));
-const form = new Form("contactForm");
+new Form("contactForm");
+
+document.querySelector(".light-switch").addEventListener("click", () => {
+  if (!document.documentElement.classList.contains("light")) {
+    document.documentElement.classList.add("light");
+  } else {
+    document.documentElement.classList.remove("light");
+  }
+});

@@ -16,7 +16,6 @@
   .themeFilter {
     filter: hue-rotate(220deg) brightness(1.5) grayscale(30%);
   }
-
   .project-img {
     filter: url("../assets/filters.svg#light-pink-blue");
     transition: filter 1s ease-out;
@@ -29,6 +28,12 @@
 
   body {
     font-weight: 300;
+  }
+  .nav-link {
+    &:hover {
+      filter: invert(15%) sepia(89%) saturate(3631%) hue-rotate(214deg)
+        brightness(96%) contrast(103%);
+    }
   }
   header {
     .light-switch {

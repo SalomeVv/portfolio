@@ -59,9 +59,6 @@ class Projects {
   }
 
   display(parent) {
-    // const section = makeEl("section", parent, [["id", "projects"]]);
-    // makeEl("h2", section, [["textContent", "Projects"]]);
-    // const wrapper = makeEl("div", section, [["classList", "wrapper"]]);
     const wrapper = makeEl("div", parent, [["classList", "wrapper"]]);
     this.projects.forEach((project, i) => {
       const bg = [
@@ -228,9 +225,16 @@ new Projects(projects, document.getElementById("projects"));
 new Form("contactForm");
 
 document.querySelector(".light-switch").addEventListener("click", () => {
+  const projects = document.querySelectorAll(".project");
   if (!document.documentElement.classList.contains("light")) {
     document.documentElement.classList.add("light");
+    projects.forEach((project) => {
+      project.style.backgroundSize = "0%";
+    });
   } else {
     document.documentElement.classList.remove("light");
+    projects.forEach((project) => {
+      project.style.backgroundSize = "cover";
+    });
   }
 });

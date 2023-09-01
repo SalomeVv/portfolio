@@ -112,7 +112,6 @@ header {
   .wrapper {
     flex-direction: column;
     width: fit-content;
-    // margin: 65vh auto auto 6vw;
     padding: 65vh 0 0 6vw;
     gap: 8px;
 
@@ -163,11 +162,14 @@ h3 {
   margin: 0 0 12px 0;
 }
 #about {
+  .wrapper {
+    gap: 1vw;
+  }
   &Me {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    align-items: stretch;
+    align-items: center;
 
     p {
       font-size: 18px;
@@ -179,7 +181,6 @@ h3 {
   &Portrait {
     min-width: max(16vw, 20vh, 60px);
     min-height: max(16vw, 20vh, 60px);
-    margin: 0 1vw;
 
     background-image: url(../assets/images/warm-praying-mantis_edit_b.png);
     background-size: contain;
@@ -250,6 +251,7 @@ h3 {
     overflow: hidden;
 
     border-radius: 8px;
+    border: solid 0.2px var(--accent-color-darker);
 
     h4 {
       @include fake-overlay();
@@ -284,8 +286,8 @@ h3 {
     }
     &-link,
     &-github {
-      width: 20px;
-      height: 20px;
+      width: min(20px, 5vw);
+      height: min(20px, 5vw);
       background-size: cover;
       margin-left: 12px;
 
